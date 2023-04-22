@@ -1,6 +1,6 @@
 <header>
-    @php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp
-    <!-- Header desktop -->
+@php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp
+<!-- Header desktop -->
     <div class="container-menu-desktop">
 
         <div class="wrap-menu-desktop">
@@ -17,9 +17,8 @@
                         <li class="active-menu"><a href="/">Trang Chủ</a> </li>
 
                         {!! $menusHtml !!}
-
                         <li>
-                            <a href="contact.html">Liên Hệ</a>
+                            <a href="{{route('logout')}}">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +74,7 @@
             {!! $menusHtml !!}
 
             <li>
-                <a href="contact.html">Liên Hệ</a>
+                <a href="{{route('logout')}}">Đăng xuất</a>
             </li>
 
         </ul>
@@ -94,6 +93,7 @@
                 </button>
                 <input class="plh3" type="text" name="search" placeholder="Search...">
             </form>
+
         </div>
     </div>
 </header>

@@ -63,7 +63,7 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-Route::get('/', [App\Http\Controllers\MainController1::class, 'index']);
+Route::get('/', [App\Http\Controllers\MainController1::class, 'index'])->name('index');
 Route::post('/services/load-product', [App\Http\Controllers\MainController1::class, 'loadProduct']);
 
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController1::class, 'index']);
@@ -75,3 +75,11 @@ Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update'
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove']);
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart']);
 
+Route::get('users/loginIndex', [App\Http\Controllers\LoginCustomerController::class, 'index'])->name('loginIndex');
+Route::post('users/loginIndex/store1', [App\Http\Controllers\LoginCustomerController::class, 'store1']);
+
+Route::get('register', [App\Http\Controllers\RegisterController::class, 'index'])->name('register');
+Route::post('registerUser', [App\Http\Controllers\RegisterController::class, 'registerUser'])->name('registerUser');
+
+Route::get('logout', [App\Http\Controllers\LoginCustomerController::class, 'logout'])->name('logout');
+Route::get('profile', [App\Http\Controllers\LoginCustomerController::class, 'showProfile'])->name('show-Profile');

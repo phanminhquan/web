@@ -12,7 +12,7 @@ class Helper
         $html = '';
 
         foreach ($menus as $key => $menu) {
-            if ($menu->parent_id == $parent_id) {
+            if7 ($menu->parent_id == $parent_id) {
                 $html .= '
                     <tr>
                         <td>' . $menu->id . '</td>
